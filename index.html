@@ -11,12 +11,6 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="description" content="Automation Intelligence helps businesses across India dominate Google search and automate lead capture. Specializing in Technical SEO, Google Business Profile, and WhatsApp AI automation.">
 
-<meta property="og:title" content="Automation Intelligence — Digital Growth & Automation">
-<meta property="og:description" content="Dominate local search with industry-specific SEO and 24/7 WhatsApp AI automation.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://automationintelligence.in/">
-<meta property="og:image" content="https://automationintelligence.in/og-image.png">
-
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -35,7 +29,6 @@
   --line: rgba(26,26,26,0.08);
   --wa-dark: #075E54;
   --wa-teal: #128C7E;
-  --wa-light: #25D366;
   --wa-bg: #ECE5DD;
   --wa-bot: #FFFFFF;
   --wa-user: #DCF8C6;
@@ -64,589 +57,153 @@ body::before {
   z-index: 0;
 }
 
-.circuit-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--red);
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 3px rgba(139,26,26,0.15);
-}
+.circuit-dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 3px rgba(139,26,26,0.15); }
 
 /* ─── NAVBAR ─── */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 16px 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  backdrop-filter: blur(20px);
-  background: rgba(245,242,235,0.9);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.3s ease;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 60px; display: flex; align-items: center; justify-content: space-between;
+  backdrop-filter: blur(20px); background: rgba(245,242,235,0.9);
+  border-bottom: 1px solid var(--border); transition: all 0.3s ease;
 }
 
-.nav-logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-
+.nav-logo { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; line-height: 1.2; }
 .nav-logo .red { color: var(--red); }
 .nav-logo .brown { color: var(--brown); }
 
-.nav-links {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-  align-items: center;
-}
-
-.nav-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
 .nav-links a:hover { color: var(--text); }
-
-.nav-cta {
-  background: var(--text) !important;
-  color: var(--bg) !important;
-  padding: 10px 24px !important;
-  border-radius: 0 !important;
-  font-weight: 600 !important;
-  letter-spacing: 1.5px !important;
-}
-
+.nav-cta { background: var(--text) !important; color: var(--bg) !important; padding: 10px 24px !important; border-radius: 0 !important; font-weight: 600 !important; letter-spacing: 1.5px !important; }
 .nav-cta:hover { background: var(--red) !important; color: white !important; }
 
-/* ─── HAMBURGER ─── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 110;
-}
-
-.nav-hamburger span {
-  width: 24px;
-  height: 1.5px;
-  background: var(--text);
-  transition: all 0.3s;
-}
-
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; z-index: 110; }
+.nav-hamburger span { width: 24px; height: 1.5px; background: var(--text); transition: all 0.3s; }
 .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .nav-hamburger.active span:nth-child(2) { opacity: 0; }
 .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* ─── MOBILE MENU ─── */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(245,242,235,0.98);
-  z-index: 105;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-}
-
+.mobile-menu { display: none; position: fixed; inset: 0; background: rgba(245,242,235,0.98); z-index: 105; flex-direction: column; align-items: center; justify-content: center; gap: 28px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
 .mobile-menu.open { opacity: 1; pointer-events: all; }
-
-.mobile-menu a {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px;
-  color: var(--text-muted);
-  text-decoration: none;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
+.mobile-menu a { font-family: 'Space Grotesk', sans-serif; font-size: 24px; color: var(--text-muted); text-decoration: none; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
 .mobile-menu a:hover { color: var(--red); }
 
 /* ─── HERO ─── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  padding: 140px 60px 100px;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 40px;
-  font-weight: 500;
-}
-
+.hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 140px 60px 100px; }
+.hero-content { position: relative; z-index: 2; max-width: 680px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 40px; font-weight: 500; }
 .hero-badge .circuit-dot { animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.4); }
-}
-
-.hero h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -1px;
-  margin-bottom: 32px;
-}
-
+.hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 6vw, 72px); font-weight: 600; line-height: 1.05; letter-spacing: -1px; margin-bottom: 32px; }
 .hero h1 .red { color: var(--red); }
 .hero h1 .brown { color: var(--brown); }
 
-.hero p {
-  font-size: 16px;
-  color: var(--text-muted);
-  line-height: 1.8;
-  max-width: 520px;
-  margin-bottom: 48px;
-  font-weight: 400;
-}
+.hero p { font-size: 16px; color: var(--text-muted); line-height: 1.8; max-width: 520px; margin-bottom: 48px; font-weight: 400; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
+.btn-primary { background: var(--text); color: var(--bg); padding: 16px 36px; font-size: 11px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary:hover { background: var(--red); color: white; transform: translateY(-2px); }
 
-.btn-primary {
-  background: var(--text);
-  color: var(--bg);
-  padding: 16px 36px;
-  font-size: 11px;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.btn-primary:hover {
-  background: var(--red);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text-muted);
-  padding: 16px 36px;
-  font-size: 11px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid var(--border-strong);
-  cursor: pointer;
-  transition: all 0.3s;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.btn-secondary:hover {
-  border-color: var(--text);
-  color: var(--text);
-}
+.btn-secondary { background: transparent; color: var(--text-muted); padding: 16px 36px; font-size: 11px; font-weight: 600; text-decoration: none; border: 1px solid var(--border-strong); cursor: pointer; transition: all 0.3s; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; }
+.btn-secondary:hover { border-color: var(--text); color: var(--text); }
 
 /* ─── PHONE MOCKUP ─── */
-.hero-visual {
-  position: absolute;
-  right: 60px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 320px;
-}
+.hero-visual { position: absolute; right: 60px; top: 50%; transform: translateY(-50%); width: 320px; }
+.phone-frame { background: #1a1a1a; border-radius: 40px; padding: 10px; box-shadow: 0 50px 100px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.08), inset 0 0 0 1px rgba(255,255,255,0.05); position: relative; }
+.phone-notch { width: 100px; height: 22px; background: #1a1a1a; border-radius: 0 0 16px 16px; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 10; }
+.phone-screen { border-radius: 30px; overflow: hidden; background: var(--wa-bg); }
 
-.phone-frame {
-  background: #1a1a1a;
-  border-radius: 40px;
-  padding: 10px;
-  box-shadow: 
-    0 50px 100px rgba(0,0,0,0.25),
-    0 0 0 1px rgba(255,255,255,0.08),
-    inset 0 0 0 1px rgba(255,255,255,0.05);
-  position: relative;
-}
-
-.phone-notch {
-  width: 100px;
-  height: 22px;
-  background: #1a1a1a;
-  border-radius: 0 0 16px 16px;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.phone-screen {
-  border-radius: 30px;
-  overflow: hidden;
-  background: var(--wa-bg);
-}
-
-/* ─── WHATSAPP CHAT UI ─── */
-.wa-header {
-  background: var(--wa-dark);
-  padding: 36px 14px 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
+.wa-header { background: var(--wa-dark); padding: 36px 14px 10px; display: flex; align-items: center; gap: 10px; }
 .wa-back { color: rgba(255,255,255,0.8); font-size: 16px; flex-shrink: 0; }
-.wa-avatar {
-  width: 30px; height: 30px;
-  background: var(--wa-teal);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; flex-shrink: 0;
-}
-
+.wa-avatar { width: 30px; height: 30px; background: var(--wa-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
 .wa-header-info { flex: 1; }
 .wa-header-name { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: white; line-height: 1.2; }
 .wa-header-status { font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.6); }
 .wa-header-actions { display: flex; gap: 14px; color: rgba(255,255,255,0.7); font-size: 16px; }
 
-.wa-chat {
-  padding: 10px 10px 14px;
-  min-height: 340px;
-  display: flex; flex-direction: column; gap: 5px;
-  background: var(--wa-bg);
-  position: relative;
-}
+.wa-chat { padding: 10px 10px 14px; min-height: 340px; display: flex; flex-direction: column; gap: 5px; background: var(--wa-bg); position: relative; }
+.wa-chat::before { content: ''; position: absolute; inset: 0; opacity: 0.06; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
 
-.wa-chat::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
-}
-
-.wa-msg {
-  max-width: 82%;
-  padding: 5px 7px 2px;
-  border-radius: 6px;
-  font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  line-height: 1.45;
-  position: relative;
-  z-index: 1;
-}
-
+.wa-msg { max-width: 82%; padding: 5px 7px 2px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 12.5px; line-height: 1.45; position: relative; z-index: 1; }
 .wa-msg.bot { background: var(--wa-bot); align-self: flex-start; border-radius: 0 7px 7px 7px; color: #1a1a1a; }
 .wa-msg.user { background: var(--wa-user); align-self: flex-end; border-radius: 7px 0 7px 7px; color: #1a1a1a; }
-
-.wa-msg .wa-time {
-  font-size: 9px;
-  color: rgba(0,0,0,0.35);
-  text-align: right;
-  margin-top: 1px;
-  display: flex; align-items: center; justify-content: flex-end; gap: 3px;
-}
-
+.wa-msg .wa-time { font-size: 9px; color: rgba(0,0,0,0.35); text-align: right; margin-top: 1px; display: flex; align-items: center; justify-content: flex-end; gap: 3px; }
 .wa-msg .wa-time .wa-check { color: #34B7F1; font-size: 10px; }
-
 .wa-input-bar { background: #F0F0F0; padding: 6px 10px; display: flex; align-items: center; gap: 8px; }
 .wa-input { flex: 1; background: white; border-radius: 20px; padding: 6px 12px; font-size: 12px; color: rgba(0,0,0,0.35); font-family: 'Inter', sans-serif; }
 .wa-input-icons { display: flex; gap: 12px; color: rgba(0,0,0,0.4); font-size: 16px; }
 .wa-send { width: 30px; height: 30px; background: var(--wa-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; flex-shrink: 0; }
 
 /* ─── STATS ─── */
-.stats {
-  padding: 48px 60px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  background: var(--bg-card);
-  position: relative;
-}
-
+.stats { padding: 48px 60px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--bg-card); position: relative; }
 .stat-item { text-align: center; padding: 24px; position: relative; }
-.stat-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: 0; top: 20%; height: 60%; width: 1px;
-  background: var(--border);
-}
-
-.stat-num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 44px;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
+.stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: var(--border); }
+.stat-num { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 600; color: var(--text); line-height: 1; margin-bottom: 8px; }
 .stat-num span { color: var(--red); }
 .stat-label { font-size: 10px; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
 
 /* ─── SECTION BASE ─── */
 section { padding: 100px 60px; position: relative; }
-
-.section-label {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 16px;
-  font-weight: 600;
-  display: flex; align-items: center; gap: 12px;
-}
-
+.section-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 16px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
 .section-label::before { content: ''; width: 24px; height: 1px; background: var(--red); }
-
-.section-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 600;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  letter-spacing: -0.5px;
-}
-
+.section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 600; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.5px; }
 .section-title .red { color: var(--red); }
 .section-title .brown { color: var(--brown); }
+.section-sub { font-size: 15px; color: var(--text-muted); line-height: 1.8; max-width: 520px; font-weight: 400; }
 
-.section-sub {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.8;
-  max-width: 520px;
-  font-weight: 400;
-}
-
-/* ─── SERVICES (WA) ─── */
-#services-wa { background: var(--bg); }
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  margin-top: 64px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-
-.service-card {
-  background: var(--bg-card);
-  padding: 40px 36px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
+/* ─── SERVICES GRID ─── */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 64px; background: var(--border); border: 1px solid var(--border); }
+.service-card { background: var(--bg-card); padding: 40px 36px; transition: all 0.3s ease; position: relative; }
 .service-card:hover { background: var(--bg-alt); }
-
-.service-card-header {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 24px; padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
+.service-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
 .service-num { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; color: var(--red); letter-spacing: 2px; }
 .service-icon { font-size: 20px; }
-
-.service-card h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--text); letter-spacing: 0.5px;
-}
-
+.service-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--text); letter-spacing: 0.5px; }
 .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 400; }
+.service-tag { display: inline-block; border: 1px solid var(--border-strong); color: var(--text-muted); font-size: 9px; padding: 4px 12px; margin-top: 20px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
 
-.service-tag {
-  display: inline-block; border: 1px solid var(--border-strong); color: var(--text-muted);
-  font-size: 9px; padding: 4px 12px; margin-top: 20px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500;
-}
-
-/* ─── SERVICES (SEO) ─── */
 #services-seo { background: var(--bg-alt); }
+#services-wa { background: var(--bg); }
 
 /* ─── CASE STUDY ─── */
-#case-study {
-  background: var(--text);
-  color: var(--bg);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
+#case-study { background: var(--text); color: var(--bg); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 #case-study .section-label { color: rgba(245,242,235,0.4); }
 #case-study .section-label::before { background: rgba(245,242,235,0.3); }
 #case-study .section-title { color: var(--bg); }
 #case-study .section-title .red { color: #D45555; }
 #case-study .section-sub { color: rgba(245,242,235,0.6); }
 
-.case-study-card {
-  background: rgba(245,242,235,0.05);
-  border: 1px solid rgba(245,242,235,0.1);
-  padding: 48px;
-  position: relative;
-}
-
-.case-study-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-  background: var(--red);
-}
-
-.case-study-header {
-  display: flex; align-items: center; gap: 16px; margin-bottom: 28px;
-  padding-bottom: 24px; border-bottom: 1px solid rgba(245,242,235,0.1);
-}
-
-.case-study-avatar {
-  width: 56px; height: 56px;
-  background: var(--red);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px; color: white;
-}
-
+.case-study-card { background: rgba(245,242,235,0.05); border: 1px solid rgba(245,242,235,0.1); padding: 48px; position: relative; }
+.case-study-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); }
+.case-study-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid rgba(245,242,235,0.1); }
+.case-study-avatar { width: 56px; height: 56px; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; }
 .case-study-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--bg); }
 .case-study-title { font-size: 12px; color: rgba(245,242,235,0.5); letter-spacing: 1px; }
-
-.case-study-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.cs-stat-num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 36px;
-  font-weight: 600;
-  color: #D45555;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
+.case-study-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.cs-stat-num { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3vw, 36px); font-weight: 600; color: #D45555; line-height: 1; margin-bottom: 6px; }
 .cs-stat-label { font-size: 11px; color: rgba(245,242,235,0.5); letter-spacing: 1px; text-transform: uppercase; }
 
 /* ─── WHY BETTER ─── */
 #why { background: var(--bg); }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  margin-top: 64px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-
-.why-card {
-  background: var(--bg-card);
-  padding: 48px 36px;
-  transition: background 0.3s;
-}
-
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 64px; background: var(--border); border: 1px solid var(--border); }
+.why-card { background: var(--bg-card); padding: 40px 32px; transition: background 0.3s; }
 .why-card:hover { background: var(--bg-alt); }
-
-.why-card-num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 11px; font-weight: 600; color: var(--red); letter-spacing: 2px;
-  margin-bottom: 28px; padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
-.why-card h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 16px; letter-spacing: 0.5px; line-height: 1.3;
-}
-
-.why-card > p { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
-
-.why-card ul { list-style: none; margin-bottom: 28px; }
-.why-card ul li {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 8px 0; font-size: 13px; color: var(--text-muted); line-height: 1.6;
-}
-
-.why-card ul li::before { content: '✓'; color: var(--red); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-.why-result {
-  background: rgba(139,26,26,0.06);
-  border: 1px solid rgba(139,26,26,0.2);
-  padding: 14px 18px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 12px; color: var(--text-muted); letter-spacing: 0.5px; line-height: 1.5;
-}
-
-.why-result strong {
-  color: var(--red); font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-  font-size: 10px; display: block; margin-bottom: 4px;
-}
+.why-card-num { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; color: var(--red); letter-spacing: 2px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.why-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 14px; letter-spacing: 0.5px; line-height: 1.3; }
+.why-card > p { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
 
 /* ─── ABOUT ─── */
 #about { background: var(--bg-alt); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-
-.about-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  padding: 48px;
-  position: relative;
-}
-
+.about-card { background: var(--bg-card); border: 1px solid var(--border); padding: 48px; position: relative; }
 .about-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); }
-
 .about-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
 .about-avatar { width: 56px; height: 56px; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; }
 .about-name { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); }
 .about-title { font-size: 12px; color: var(--text-light); letter-spacing: 1px; }
-
 .about-card p { font-size: 14px; color: var(--text-muted); line-height: 1.8; font-weight: 400; margin-bottom: 16px; }
-
 .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .about-tag { border: 1px solid var(--border-strong); color: var(--text-muted); font-size: 10px; padding: 5px 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
-
 .msme-badge { background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2); padding: 16px 20px; margin-top: 24px; display: flex; align-items: center; gap: 12px; }
 .msme-badge .icon { font-size: 20px; }
 .msme-badge .msme-label { font-size: 9px; color: #D4AF37; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
@@ -654,13 +211,10 @@ section { padding: 100px 60px; position: relative; }
 
 /* ─── CONTACT ─── */
 #contact { background: var(--bg); }
-
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 64px; align-items: start; }
 .contact-info { display: flex; flex-direction: column; gap: 28px; }
-
 .contact-item { display: flex; gap: 16px; align-items: flex-start; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
 .contact-item:last-child { border-bottom: none; padding-bottom: 0; }
-
 .contact-icon { width: 40px; height: 40px; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
 .contact-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; font-weight: 600; }
 .contact-value { font-size: 15px; color: var(--text); font-weight: 500; }
@@ -669,91 +223,51 @@ section { padding: 100px 60px; position: relative; }
 
 .contact-form { background: var(--bg-card); border: 1px solid var(--border); padding: 48px; position: relative; }
 .contact-form::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); }
-
 .contact-form h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; margin-bottom: 6px; font-weight: 600; }
 .contact-form > p { font-size: 13px; color: var(--text-muted); margin-bottom: 32px; font-weight: 400; }
 
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 9px; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; }
-
-.form-group input, .form-group textarea, .form-group select {
-  width: 100%; background: var(--bg); border: 1px solid var(--border);
-  padding: 14px 16px; color: var(--text); font-family: 'Inter', sans-serif;
-  font-size: 14px; transition: border-color 0.3s; outline: none;
-}
-
+.form-group input, .form-group textarea, .form-group select { width: 100%; background: var(--bg); border: 1px solid var(--border); padding: 14px 16px; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; transition: border-color 0.3s; outline: none; }
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--red); }
 .form-group input.error, .form-group textarea.error { border-color: #D45555; }
 .form-group select option { background: var(--bg); color: var(--text); }
 .form-group textarea { height: 80px; resize: none; }
 
-.form-submit {
-  width: 100%; background: var(--text); color: var(--bg); border: none;
-  padding: 16px; font-family: 'Space Grotesk', sans-serif; font-size: 11px;
-  font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-  cursor: pointer; transition: all 0.3s;
-}
-
+.form-submit { width: 100%; background: var(--text); color: var(--bg); border: none; padding: 16px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
 .form-submit:hover { background: var(--red); color: white; }
 .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-
-.form-submit .spinner {
-  display: inline-block; width: 14px; height: 14px;
-  border: 2px solid rgba(245,242,235,0.3); border-top-color: var(--bg);
-  border-radius: 50%; animation: spin 0.6s linear infinite;
-  vertical-align: middle; margin-right: 8px;
-}
-
+.form-submit .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(245,242,235,0.3); border-top-color: var(--bg); border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 8px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .form-status { margin-top: 16px; padding: 12px 16px; font-size: 13px; display: none; }
 .form-status.success { display: block; background: rgba(139,26,26,0.06); border: 1px solid rgba(139,26,26,0.2); color: var(--red); }
 .form-status.error { display: block; background: rgba(212,85,85,0.06); border: 1px solid rgba(212,85,85,0.2); color: #D45555; }
 
-/* ─── TOAST ─── */
-.toast {
-  position: fixed; bottom: 32px; left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  background: var(--text); color: var(--bg); padding: 14px 28px;
-  font-size: 12px; font-weight: 500; letter-spacing: 1px;
-  z-index: 200; opacity: 0; pointer-events: none; transition: all 0.3s ease;
-}
-
+.toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--text); color: var(--bg); padding: 14px 28px; font-size: 12px; font-weight: 500; letter-spacing: 1px; z-index: 200; opacity: 0; pointer-events: none; transition: all 0.3s ease; }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* ─── FOOTER ─── */
-footer {
-  background: var(--text); border-top: 1px solid rgba(245,242,235,0.1);
-  padding: 40px 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
-}
-
+footer { background: var(--text); border-top: 1px solid rgba(245,242,235,0.1); padding: 40px 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
 .footer-logo { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--bg); letter-spacing: 2px; text-transform: uppercase; }
 .footer-logo .red { color: #D45555; }
 .footer-logo .brown { color: #C4A882; }
-
-.footer-links { display: flex; gap: 28px; }
+.footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
 .footer-links a { color: rgba(245,242,235,0.4); text-decoration: none; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
 .footer-links a:hover { color: var(--bg); }
+.footer-social { display: flex; gap: 16px; align-items: center; }
+.footer-social a { color: rgba(245,242,235,0.4); transition: color 0.3s; display: flex; align-items: center; }
+.footer-social a:hover { color: var(--bg); }
+.footer-social svg { width: 18px; height: 18px; fill: currentColor; }
 .footer-copy { font-size: 11px; color: rgba(245,242,235,0.3); letter-spacing: 1px; }
 
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ─── WHATSAPP FLOAT ─── */
-.wa-float {
-  position: fixed; bottom: 32px; right: 32px;
-  background: #25D366; width: 56px; height: 56px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  text-decoration: none; z-index: 99; transition: all 0.3s;
-  animation: bounceIn 1s ease 1s both;
-}
-
+.wa-float { position: fixed; bottom: 32px; right: 32px; background: #25D366; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; z-index: 99; transition: all 0.3s; animation: bounceIn 1s ease 1s both; }
 .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
 .wa-float svg { width: 30px; height: 30px; fill: white; }
-
 @keyframes bounceIn { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
 
 /* ─── MOBILE ─── */
@@ -762,33 +276,26 @@ footer {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .mobile-menu { display: flex; }
-
   .hero { padding: 120px 24px 60px; flex-direction: column; min-height: auto; }
   .hero-content { max-width: 100%; }
   .hero-visual { position: relative; right: auto; top: auto; transform: none; width: 100%; max-width: 340px; margin: 48px auto 0; }
   .wa-chat { min-height: 260px; }
-
   .stats { grid-template-columns: repeat(2, 1fr); padding: 32px 24px; gap: 0; }
   .stat-item:not(:last-child)::after { display: none; }
   .stat-item { border-bottom: 1px solid var(--border); padding-bottom: 20px; }
-
   section { padding: 60px 24px; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { padding: 28px 24px; }
   .why-grid { grid-template-columns: 1fr; }
   .why-card { padding: 32px 24px; }
-  
   #case-study { grid-template-columns: 1fr; gap: 40px; }
   .case-study-card { padding: 32px 24px; }
-  
   #about { grid-template-columns: 1fr; padding: 60px 24px; }
   .about-card { padding: 32px 24px; }
-  
   .contact-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 32px 24px; }
-  
   footer { flex-direction: column; gap: 20px; padding: 32px 24px; text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .footer-links { justify-content: center; }
   .wa-float { bottom: 20px; right: 20px; width: 48px; height: 48px; }
   .wa-float svg { width: 26px; height: 26px; }
 }
@@ -800,8 +307,8 @@ footer {
 <nav>
   <div class="nav-logo"><span class="red">Automation</span><br><span class="brown">Intelligence</span></div>
   <ul class="nav-links">
-    <li><a href="#services-wa">Automation</a></li>
-    <li><a href="#services-seo">SEO & Growth</a></li>
+    <li><a href="#services-seo">SEO & GBP</a></li>
+    <li><a href="#services-wa">WhatsApp Automation</a></li>
     <li><a href="#case-study">Case Study</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact" class="nav-cta">Free Audit</a></li>
@@ -813,8 +320,8 @@ footer {
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#services-wa" class="mobile-nav-link">Automation</a>
-  <a href="#services-seo" class="mobile-nav-link">SEO & Growth</a>
+  <a href="#services-seo" class="mobile-nav-link">SEO & GBP</a>
+  <a href="#services-wa" class="mobile-nav-link">WhatsApp Automation</a>
   <a href="#case-study" class="mobile-nav-link">Case Study</a>
   <a href="#about" class="mobile-nav-link">About</a>
   <a href="#contact" class="mobile-nav-link" style="color: var(--red);">Free Audit →</a>
@@ -827,11 +334,11 @@ footer {
       <div class="circuit-dot"></div>
       Digital Growth · Automation · Hyderabad
     </div>
-    <h1>Engineering <span class="red">Digital Growth</span> For <span class="brown">High-Value</span> Businesses.</h1>
-    <p>We combine aggressive SEO & Google Business Profile management with 24/7 WhatsApp AI automation. Dominate local search, capture every lead, and turn clicks into actual revenue — no manual work required.</p>
+    <h1>Dominate <span class="red">Google Search</span> & Convert Leads on <span class="brown">Autopilot.</span></h1>
+    <p>We engineer digital growth for businesses across India. Rank higher on Google with technical SEO & GBP management, and capture every lead 24/7 with WhatsApp AI automation. No third-party dependencies, no waiting on approvals.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Get a Free SEO Audit →</a>
-      <a href="#services-wa" class="btn-secondary">View Infrastructure</a>
+      <a href="#contact" class="btn-primary">Get a Free PDF Audit →</a>
+      <a href="#services-seo" class="btn-secondary">View SEO Services</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -848,34 +355,13 @@ footer {
           <div class="wa-header-actions">📎 ⋮</div>
         </div>
         <div class="wa-chat">
-          <div class="wa-msg bot">
-            Hi there! 👋 How can we help you today?
-            <div class="wa-time">9:41 AM</div>
-          </div>
-          <div class="wa-msg user">
-            What are your visiting hours?
-            <div class="wa-time">9:41 AM <span class="wa-check">✓✓</span></div>
-          </div>
-          <div class="wa-msg bot">
-            We're open Mon–Sat, 9:00 AM – 7:00 PM. Would you like to book an appointment?
-            <div class="wa-time">9:41 AM</div>
-          </div>
-          <div class="wa-msg user">
-            Yes please
-            <div class="wa-time">9:41 AM <span class="wa-check">✓✓</span></div>
-          </div>
-          <div class="wa-msg bot">
-            When works for you?<br>📅 Tomorrow<br>📅 Day after<br>📅 Next week
-            <div class="wa-time">9:41 AM</div>
-          </div>
-          <div class="wa-msg user">
-            Tomorrow
-            <div class="wa-time">9:41 AM <span class="wa-check">✓✓</span></div>
-          </div>
-          <div class="wa-msg bot">
-            ✅ Appointment confirmed!<br>Tomorrow, 11:00 AM.<br>We'll send you a reminder. See you tomorrow! 😊
-            <div class="wa-time">9:41 AM</div>
-          </div>
+          <div class="wa-msg bot">Hi there! 👋 How can we help you today?<div class="wa-time">9:41 AM</div></div>
+          <div class="wa-msg user">What are your visiting hours?<div class="wa-time">9:41 AM <span class="wa-check">✓✓</span></div></div>
+          <div class="wa-msg bot">We're open Mon–Sat, 9:00 AM – 7:00 PM. Would you like to book an appointment?<div class="wa-time">9:41 AM</div></div>
+          <div class="wa-msg user">Yes please<div class="wa-time">9:41 AM <span class="wa-check">✓✓</span></div></div>
+          <div class="wa-msg bot">When works for you?<br>📅 Tomorrow<br>📅 Day after<div class="wa-time">9:41 AM</div></div>
+          <div class="wa-msg user">Tomorrow<div class="wa-time">9:41 AM <span class="wa-check">✓✓</span></div></div>
+          <div class="wa-msg bot">✅ Appointment confirmed!<br>Tomorrow, 11:00 AM.<div class="wa-time">9:41 AM</div></div>
         </div>
         <div class="wa-input-bar">
           <div class="wa-input-icons">😀 📎</div>
@@ -889,121 +375,64 @@ footer {
 
 <!-- STATS -->
 <div class="stats">
-  <div class="stat-item reveal">
-    <div class="stat-num"><span>+</span>71<span>%</span></div>
-    <div class="stat-label">Organic Clicks (30 Days)</div>
-  </div>
-  <div class="stat-item reveal">
-    <div class="stat-num">91<span>/100</span></div>
-    <div class="stat-label">Desktop PageSpeed</div>
-  </div>
-  <div class="stat-item reveal">
-    <div class="stat-num">329</div>
-    <div class="stat-label">Direct Calls via GBP</div>
-  </div>
-  <div class="stat-item reveal">
-    <div class="stat-num">24<span>/7</span></div>
-    <div class="stat-label">WhatsApp AI Capture</div>
-  </div>
+  <div class="stat-item reveal"><div class="stat-num"><span>+</span>71<span>%</span></div><div class="stat-label">Organic Clicks (30 Days)</div></div>
+  <div class="stat-item reveal"><div class="stat-num">91<span>/100</span></div><div class="stat-label">Desktop PageSpeed</div></div>
+  <div class="stat-item reveal"><div class="stat-num">329</div><div class="stat-label">Direct Calls via GBP</div></div>
+  <div class="stat-item reveal"><div class="stat-num">24<span>/7</span></div><div class="stat-label">WhatsApp AI Capture</div></div>
 </div>
 
-<!-- SERVICES: WHATSAPP AUTOMATION -->
-<section id="services-wa">
-  <div class="section-label">Pillar 01 · WhatsApp Automation</div>
-  <h2 class="section-title">AI Conversational <span class="brown">Backend Ecosystem.</span></h2>
-  <p class="section-sub">No third-party modifications. Custom logic engine configured for your business's exact operational funnel. Zero human latency.</p>
-
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">01 / CAPTURE</div>
-        <div class="service-icon">🤖</div>
-      </div>
-      <h3>AI Lead Capture & Booking</h3>
-      <p>Customers message your business WhatsApp and our AI handles the entire conversation — checking availability, confirming slots, saving to your records. Works at 2 AM on a Sunday.</p>
-      <span class="service-tag">Zero Human Latency</span>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">02 / RETENTION</div>
-        <div class="service-icon">⏰</div>
-      </div>
-      <h3>Automated Reminders</h3>
-      <p>Automatic WhatsApp reminders sent before every appointment or meeting. Customers confirm or reschedule — all handled by the system. No-shows drop significantly from day one.</p>
-      <span class="service-tag">Reduces Leakage</span>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">03 / FOLLOW-UP</div>
-        <div class="service-icon">💬</div>
-      </div>
-      <h3>Post-Service Follow Up</h3>
-      <p>After every interaction, the system checks on your customer. How was their experience? Any concerns? This builds loyalty and catches issues early — automatically.</p>
-      <span class="service-tag">Customer Loyalty</span>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">04 / REPUTATION</div>
-        <div class="service-icon">⭐</div>
-      </div>
-      <h3>Google Review Generation</h3>
-      <p>Satisfied customers automatically receive a review request. Only positive sentiment triggers it. Watch your Google rating climb and new customers discover you organically.</p>
-      <span class="service-tag">Organic Growth</span>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">05 / RECOVERY</div>
-        <div class="service-icon">🔄</div>
-      </div>
-      <h3>Customer Reengagement</h3>
-      <p>Customers who haven't engaged in months receive a personalised message bringing them back. Your old contact list becomes a recurring revenue engine — automatically.</p>
-      <span class="service-tag">Revenue Recovery</span>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">06 / REPORTING</div>
-        <div class="service-icon">📊</div>
-      </div>
-      <h3>Monthly Performance Report</h3>
-      <p>Every month you receive a detailed video report — bookings captured, reminders sent, customers reactivated, reviews generated. See the exact value we deliver.</p>
-      <span class="service-tag">Full Transparency</span>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES: SEO & GROWTH -->
+<!-- SERVICES: SEO & GBP (Primary) -->
 <section id="services-seo">
-  <div class="section-label">Pillar 02 · Search & Local SEO</div>
+  <div class="section-label">Pillar 01 · Search & Local SEO</div>
   <h2 class="section-title">Dominate <span class="red">Google Search</span> & Maps.</h2>
   <p class="section-sub">We deploy industry-specific schema markup, local-intent keyword research, and multi-location GBP management to ensure you rank where it matters most.</p>
 
   <div class="services-grid">
     <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">01 / FOUNDATION</div>
-        <div class="service-icon">⚙️</div>
-      </div>
+      <div class="service-card-header"><div class="service-num">01 / FOUNDATION</div><div class="service-icon">⚙️</div></div>
       <h3>Technical SEO Setup</h3>
       <p>Full website speed audits, schema markup implementation (LocalBusiness, Service, FAQ), XML sitemap optimization, WebP image conversion, and broken link fixes. Built for rich snippets.</p>
       <span class="service-tag">Architecture First</span>
     </div>
     <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">02 / GROWTH</div>
-        <div class="service-icon">📍</div>
-      </div>
+      <div class="service-card-header"><div class="service-num">02 / GROWTH</div><div class="service-icon">📍</div></div>
       <h3>GBP Management & Local SEO</h3>
-      <p>Profile setup and verification for all locations, category optimization, weekly posts, Q&A seeding, NAP consistency across directories, and review generation strategy.</p>
+      <p>Profile setup and verification for all locations, category optimization, weekly posts, Q&A seeding, NAP consistency across directories, and competitor gap analysis.</p>
       <span class="service-tag">Map Domination</span>
     </div>
     <div class="service-card reveal">
-      <div class="service-card-header">
-        <div class="service-num">03 / SCALE</div>
-        <div class="service-icon">✍️</div>
-      </div>
+      <div class="service-card-header"><div class="service-num">03 / SCALE</div><div class="service-icon">✍️</div></div>
       <h3>Content Engine</h3>
       <p>SEO-optimized articles with local-intent keyword research, topic cluster strategy, and internal linking architecture. Subject-matter expert content that builds sustained authority.</p>
       <span class="service-tag">Authority Building</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES: WHATSAPP AUTOMATION -->
+<section id="services-wa">
+  <div class="section-label">Pillar 02 · WhatsApp Automation</div>
+  <h2 class="section-title">AI Conversational <span class="brown">Backend Ecosystem.</span></h2>
+  <p class="section-sub">Once SEO drives the traffic, our custom AI backend takes over. Capturing leads, booking appointments, and following up 24/7 without a single manual message.</p>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-card-header"><div class="service-num">01 / CAPTURE</div><div class="service-icon">🤖</div></div>
+      <h3>AI Lead Capture & Booking</h3>
+      <p>Customers message your business WhatsApp and our AI handles the entire conversation — checking availability, confirming slots, saving to your records. Works at 2 AM on a Sunday.</p>
+      <span class="service-tag">Zero Human Latency</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-header"><div class="service-num">02 / RETENTION</div><div class="service-icon">⏰</div></div>
+      <h3>Automated Reminders</h3>
+      <p>Automatic WhatsApp reminders sent before every appointment or meeting. Customers confirm or reschedule — all handled by the system. No-shows drop significantly from day one.</p>
+      <span class="service-tag">Reduces Leakage</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-header"><div class="service-num">03 / FOLLOW-UP</div><div class="service-icon">💬</div></div>
+      <h3>Post-Service Follow Up</h3>
+      <p>After every interaction, the system checks on your customer. How was their experience? Any concerns? This builds loyalty and catches issues early — automatically.</p>
+      <span class="service-tag">Customer Loyalty</span>
     </div>
   </div>
 </section>
@@ -1031,30 +460,12 @@ footer {
       </div>
     </div>
     <div class="case-study-stats">
-      <div>
-        <div class="cs-stat-num">+71.6%</div>
-        <div class="cs-stat-label">Organic Clicks</div>
-      </div>
-      <div>
-        <div class="cs-stat-num">+78.6%</div>
-        <div class="cs-stat-label">Search Impressessions</div>
-      </div>
-      <div>
-        <div class="cs-stat-num">611</div>
-        <div class="cs-stat-label">Direction Requests</div>
-      </div>
-      <div>
-        <div class="cs-stat-num">329</div>
-        <div class="cs-stat-label">Direct Phone Calls</div>
-      </div>
-      <div>
-        <div class="cs-stat-num">8.4 → 6.6</div>
-        <div class="cs-stat-label">Avg Position Jump</div>
-      </div>
-      <div>
-        <div class="cs-stat-num">91/100</div>
-        <div class="cs-stat-label">Desktop PageSpeed</div>
-      </div>
+      <div><div class="cs-stat-num">+71.6%</div><div class="cs-stat-label">Organic Clicks</div></div>
+      <div><div class="cs-stat-num">+78.6%</div><div class="cs-stat-label">Search Impressessions</div></div>
+      <div><div class="cs-stat-num">611</div><div class="cs-stat-label">Direction Requests</div></div>
+      <div><div class="cs-stat-num">329</div><div class="cs-stat-label">Direct Phone Calls</div></div>
+      <div><div class="cs-stat-num">8.4 → 6.6</div><div class="cs-stat-label">Avg Position Jump</div></div>
+      <div><div class="cs-stat-num">91/100</div><div class="cs-stat-label">Desktop PageSpeed</div></div>
     </div>
   </div>
 </section>
@@ -1063,35 +474,28 @@ footer {
 <section id="why">
   <div class="section-label">Competitive Architecture</div>
   <h2 class="section-title">Why Automation Intelligence <span class="brown">Outperforms</span> Agencies.</h2>
-  <p class="section-sub">Generic agencies use cookie-cutter templates. We deploy industry-specific schema markup, compliance-aware technical implementation, and real customer acquisition metrics.</p>
+  <p class="section-sub">Generic agencies use cookie-cutter templates. We deploy industry-specific schema, compliance-aware technical implementation, and real customer acquisition metrics.</p>
 
   <div class="why-grid">
     <div class="why-card reveal">
-      <div class="why-card-num">01 / DIAGNOSE</div>
-      <h3>We Diagnose Before Prescribing</h3>
-      <p>Our lead generation strategy centers on a free SEO audit. Businesses submit their details, and we deliver a 2-minute video audit within 24 hours showing exactly why they're not ranking and how to fix it.</p>
-      <div class="why-result">
-        <strong>Net Effect</strong>
-        Immediate value and full transparency before any contract is signed.
-      </div>
+      <div class="why-card-num">01 / REVENUE ENGINEERING</div>
+      <h3>End-to-End Growth Systems</h3>
+      <p>We don't just build traffic; we build revenue. SEO gets them to your Google Business Profile, and our custom WhatsApp AI captures, qualifies, and books them instantly.</p>
     </div>
     <div class="why-card reveal">
-      <div class="why-card-num">02 / INDUSTRY-SPECIFIC</div>
-      <h3>No Cookie-Cutter Templates</h3>
-      <p>We deploy industry-specific schema markup, local-intent keyword research, multi-location GBP management, and subject-matter expert content. Every strategy is built for your specific industry.</p>
-      <div class="why-result">
-        <strong>Net Effect</strong>
-        Higher relevance scores and rich snippet eligibility across all platforms.
-      </div>
+      <div class="why-card-num">02 / DIRECT API ACCESS</div>
+      <h3>Zero Third-Party Dependencies</h3>
+      <p>We build exclusively on official paths via Meta API. No risky automation tools that get your account suspended. Custom logic engines adapt to your exact operational funnel.</p>
     </div>
     <div class="why-card reveal">
-      <div class="why-card-num">03 / REPORTING</div>
-      <h3>Real Metrics, Not PDFs</h3>
-      <p>Clients receive monthly video reports, not automated PDFs nobody reads. We track real customer acquisition metrics: calls, directions, bookings, and actual revenue generated.</p>
-      <div class="why-result">
-        <strong>Net Effect</strong>
-        Complete pipeline visibility and tight tracking of actual ROI.
-      </div>
+      <div class="why-card-num">03 / REAL METRICS</div>
+      <h3>ROI Over Vanity Analytics</h3>
+      <p>Clients receive monthly PDF reports tracking real customer acquisition: direct phone calls, direction requests, and bookings generated. We measure revenue, not just impressions.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-card-num">04 / RAPID DEPLOYMENT</div>
+      <h3>Speed To Market</h3>
+      <p>Our process moves fast. Deep audit in Week 1, technical foundation fixes in Week 2, GBP optimization in Week 3, and content deployment scaling from Week 4 onward.</p>
     </div>
   </div>
 </section>
@@ -1102,11 +506,12 @@ footer {
     <div class="section-label">System Engineering</div>
     <h2 class="section-title">Built in <span class="brown">Hyderabad.</span><br>Serving <span class="red">All India.</span></h2>
     <p class="section-sub" style="margin-bottom:40px;">Founded with a vision to help local businesses dominate search results, we started with WhatsApp automation tools but pivoted to SEO services after recognizing that businesses were consistently asking for one thing: "Can you help us get found on Google?"</p>
+    <p class="section-sub" style="margin-bottom:40px;">Today, we operate on a two-pillar growth model. <strong>Pillar One is SEO & GBP:</strong> We deploy industry-specific schema markup, local-intent keyword research, and multi-location GBP management to ensure you rank at the top. <strong>Pillar Two is WhatsApp Automation:</strong> Once the traffic hits, our custom AI backend ecosystem takes over—capturing leads, booking appointments, and following up 24/7 without a single manual message.</p>
     <div class="about-tags">
       <span class="about-tag">Rank Math Pro</span>
       <span class="about-tag">Ahrefs</span>
       <span class="about-tag">Google Search Console</span>
-      <span class="about-tag">Custom Dashboards</span>
+      <span class="about-tag">Official Meta API</span>
       <span class="about-tag">All Website Platforms</span>
     </div>
   </div>
@@ -1134,86 +539,34 @@ footer {
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Immediate Engagement</div>
-  <h2 class="section-title">Get Your <span class="red">Free SEO Audit.</span></h2>
-  <p class="section-sub">Submit your details below. We'll deliver a 2-minute video audit within 24 hours showing exactly why you're not ranking and how to fix it.</p>
+  <h2 class="section-title">Get Your <span class="red">Free PDF Audit.</span></h2>
+  <p class="section-sub">Submit your details below. We'll deliver a comprehensive PDF audit within 24 hours showing exactly why you're not ranking and how to fix it.</p>
 
   <div class="contact-grid">
     <div class="contact-info reveal">
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div>
-          <div class="contact-label">Phone / WhatsApp</div>
-          <div class="contact-value"><a href="https://wa.me/918341371690">+91 83413 71690</a></div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value"><a href="mailto:info@automationintelligence.in">info@automationintelligence.in</a></div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div>
-          <div class="contact-label">Location</div>
-          <div class="contact-value">Hyderabad, Telangana, India</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🌐</div>
-        <div>
-          <div class="contact-label">Service Area</div>
-          <div class="contact-value">All India (Hyderabad, Bangalore, Mumbai, Delhi, Chennai, Pune)</div>
-        </div>
-      </div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone / WhatsApp</div><div class="contact-value"><a href="https://wa.me/918341371690">+91 83413 71690</a></div></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:info@automationintelligence.in">info@automationintelligence.in</a></div></div></div>
+      <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Location</div><div class="contact-value">Hyderabad, Telangana, India</div></div></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><div><div class="contact-label">Service Area</div><div class="contact-value">All India (Hyderabad, Bangalore, Mumbai, Delhi, Chennai, Pune)</div></div></div>
     </div>
 
     <div class="contact-form reveal">
       <h3>Request Free Audit</h3>
-      <p>Fill this form and we'll send your custom video audit within 24 hours.</p>
+      <p>Fill this form and we'll send your custom PDF audit within 24 hours.</p>
       <form id="demoForm">
         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
         <input type="hidden" name="subject" value="New Free SEO Audit Request — Automation Intelligence">
         <input type="hidden" name="from_name" value="Automation Intelligence Website">
         <input type="checkbox" name="botcheck" style="display:none">
 
-        <div class="form-group">
-          <label for="formName">Your Name *</label>
-          <input type="text" id="formName" name="name" placeholder="Your full name" required>
-        </div>
-        <div class="form-group">
-          <label for="formBusiness">Business Name *</label>
-          <input type="text" id="formBusiness" name="business" placeholder="Your Business Name" required>
-        </div>
-        <div class="form-group">
-          <label for="formUrl">Website URL *</label>
-          <input type="url" id="formUrl" name="website" placeholder="https://yourbusiness.com" required>
-        </div>
-        <div class="form-group">
-          <label for="formIndustry">Industry *</label>
-          <select id="formIndustry" name="industry" required>
-            <option value="">Select your industry</option>
-            <option value="Healthcare">Healthcare / Medical</option>
-            <option value="Retail">Retail</option>
-            <option value="Hospitality">Hospitality</option>
-            <option value="Real Estate">Real Estate</option>
-            <option value="Education">Education</option>
-            <option value="Professional Services">Professional Services</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="formCity">City *</label>
-          <input type="text" id="formCity" name="city" placeholder="e.g. Hyderabad" required>
-        </div>
-        <div class="form-group">
-          <label for="formPhone">Phone / WhatsApp *</label>
-          <input type="tel" id="formPhone" name="phone" placeholder="+919876543210" required>
-        </div>
-        <button type="submit" class="form-submit" id="submitBtn">
-          Submit for Free Audit →
-        </button>
+        <div class="form-group"><label for="formName">Your Name *</label><input type="text" id="formName" name="name" placeholder="Your full name" required></div>
+        <div class="form-group"><label for="formBusiness">Business Name *</label><input type="text" id="formBusiness" name="business" placeholder="Your Business Name" required></div>
+        <div class="form-group"><label for="formUrl">Website URL *</label><input type="url" id="formUrl" name="website" placeholder="https://yourbusiness.com" required></div>
+        <div class="form-group"><label for="formIndustry">Industry *</label><select id="formIndustry" name="industry" required><option value="">Select your industry</option><option value="Healthcare">Healthcare / Medical</option><option value="Retail">Retail</option><option value="Hospitality">Hospitality</option><option value="Real Estate">Real Estate</option><option value="Education">Education</option><option value="Professional Services">Professional Services</option><option value="Other">Other</option></select></div>
+        <div class="form-group"><label for="formCity">City *</label><input type="text" id="formCity" name="city" placeholder="e.g. Hyderabad" required></div>
+        <div class="form-group"><label for="formPhone">Phone / WhatsApp *</label><input type="tel" id="formPhone" name="phone" placeholder="+919876543210" required></div>
+        
+        <button type="submit" class="form-submit" id="submitBtn">Submit for Free Audit →</button>
         <div class="form-status" id="formStatus"></div>
       </form>
     </div>
@@ -1224,28 +577,28 @@ footer {
 <footer>
   <div class="footer-logo"><span class="red">Automation</span> <span class="brown">Intelligence</span></div>
   <div class="footer-links">
-    <a href="#services-wa">Automation</a>
-    <a href="#services-seo">SEO & Growth</a>
+    <a href="#services-seo">SEO & GBP</a>
+    <a href="#services-wa">WhatsApp Automation</a>
     <a href="#case-study">Case Study</a>
     <a href="privacy-policy.html">Privacy</a>
     <a href="terms-of-service.html">Terms</a>
   </div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/automationintelligence.in" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+  </div>
   <div class="footer-copy">© <span id="currentYear"></span> Automation Intelligence · UDYAM-TS-02-0333374</div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/918341371690?text=Hi%20Rishikesh%2C%20I%20want%20to%20know%20more%20about%20business%20automation." class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.132 6.742 3.054 9.38L1.054 31.2l6.054-1.952A15.914 15.914 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.314 22.61c-.39 1.1-1.932 2.014-3.17 2.282-.846.18-1.95.322-5.67-1.218-4.762-1.97-7.826-6.81-8.064-7.126-.23-.316-1.928-2.568-1.928-4.896s1.22-3.474 1.654-3.95c.434-.476.948-.596 1.264-.596.316 0 .632.004.908.016.292.014.684-.11 1.07.816.39.934 1.326 3.236 1.442 3.47.116.234.194.508.04.816-.156.316-.234.508-.47.784-.234.278-.494.62-.706.832-.236.236-.48.49-.206.962.274.47 1.222 2.016 2.624 3.266 1.804 1.608 3.324 2.106 3.796 2.34.47.234.744.196 1.018-.118.278-.316 1.186-1.382 1.502-1.858.316-.47.632-.39 1.066-.234.434.156 2.742 1.294 3.214 1.528.47.234.784.352.902.548.116.196.116 1.126-.274 2.226z"/>
-  </svg>
+<a href="https://wa.me/918341371690" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.132 6.742 3.054 9.38L1.054 31.2l6.054-1.952A15.914 15.914 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.314 22.61c-.39 1.1-1.932 2.014-3.17 2.282-.846.18-1.95.322-5.67-1.218-4.762-1.97-7.826-6.81-8.064-7.126-.23-.316-1.928-2.568-1.928-4.896s1.22-3.474 1.654-3.95c.434-.476.948-.596 1.264-.596.316 0 .632.004.908.016.292.014.684-.11 1.07.816.39.934 1.326 3.236 1.442 3.47.116.234.194.508.04.816-.156.316-.234.508-.47.784-.234.278-.494.62-.706.832-.236.236-.48.49-.206.962.274.47 1.222 2.016 2.624 3.266 1.804 1.608 3.324 2.106 3.796 2.34.47.234.744.196 1.018-.118.278-.316 1.186-1.382 1.502-1.858.316-.47.632-.39 1.066-.234.434.156 2.742 1.294 3.214 1.528.47.234.784.352.902.548.116.196.116 1.126-.274 2.226z"/></svg>
 </a>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
 document.getElementById('currentYear').textContent = new Date().getFullYear();
-
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
@@ -1264,13 +617,11 @@ window.addEventListener('scroll', () => {
 
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   mobileMenu.classList.toggle('open');
   document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
 });
-
 document.querySelectorAll('.mobile-nav-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
@@ -1292,7 +643,6 @@ const formStatus = document.getElementById('formStatus');
 
 demoForm.addEventListener('submit', async function(e) {
   e.preventDefault();
-
   document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(el => el.classList.remove('error'));
   formStatus.className = 'form-status';
   formStatus.style.display = 'none';
@@ -1324,15 +674,12 @@ demoForm.addEventListener('submit', async function(e) {
 
   try {
     const formData = new FormData(demoForm);
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData
-    });
+    const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
     const result = await response.json();
 
     if (result.success) {
       formStatus.className = 'form-status success';
-      formStatus.innerHTML = '✓ Thank you! We will review your site and send your 2-minute video audit within 24 hours.';
+      formStatus.innerHTML = '✓ Thank you! We will review your site and send your comprehensive PDF audit within 24 hours.';
       formStatus.style.display = 'block';
       demoForm.reset();
       showToast('Audit request submitted successfully!');
@@ -1350,7 +697,6 @@ demoForm.addEventListener('submit', async function(e) {
   }
 });
 
-// WhatsApp chat animation
 const waMsgs = document.querySelectorAll('.wa-msg');
 waMsgs.forEach((msg, i) => {
   msg.style.opacity = '0';
